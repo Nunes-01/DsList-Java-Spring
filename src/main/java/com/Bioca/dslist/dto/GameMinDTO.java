@@ -1,6 +1,7 @@
 package com.Bioca.dslist.dto;
 
 import com.Bioca.dslist.entities.Game;
+import com.Bioca.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -12,7 +13,7 @@ public class GameMinDTO {
 
 	public GameMinDTO() {
 	}
-	
+
 	public GameMinDTO(Game entity) {
 
 		id = entity.getId();
@@ -20,6 +21,15 @@ public class GameMinDTO {
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
+	}
+
+	public GameMinDTO(GameMinProjection Projection) {
+
+		id = Projection.getId();
+		title = Projection.getTitle();
+		year = Projection.getYear();
+		imgUrl = Projection.getImgUrl();
+		shortDescription = Projection.getShortDescription();
 	}
 
 	public long getId() {
