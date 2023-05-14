@@ -34,6 +34,5 @@ public class GameListController {
 	public List<GameMinDTO> findByList(@PathVariable Long listId) {
 		List<GameMinDTO> result = gameservice.findByList(listId);
 		return result;
-
 	}
 }
